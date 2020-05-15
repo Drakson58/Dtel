@@ -1,0 +1,55 @@
+<section style="margin-bottom: 20px">
+    <div class="container">
+        <form action="/realizar_cadastro" method="post">
+            <div class="">
+                <h3 class="text-center" style="margin-top: 15px">Cadastro de Bolsistas</h3>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="nome">Nome: </label>
+                </div>
+                <div class="col-75">
+                    <input name="nome_bolsista" type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="turno">Turno: </label>
+                </div>
+                <div class="col-75">
+                    <select id="turno" name="turno">
+                        <option name="manha"value="manha">Manhã</option>
+                        <option name="tarde" value="tarde">Tarde</option>
+                        <option name="noite" value="noite">Noite</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">E-mail:</label>
+                </div>
+                <div class="col-75">
+                    <input name="email_bolsista" type="email" id="email" name="email" placeholder="Digite seu e-mail">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="senha">Senha: </label>
+                </div>
+                <div class="col-75">
+                    <input name="senha_bolsista" type="password" id="senha" name="senha" placeholder="Digite sua senha">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Cadastrar">
+            </div>
+
+            <?php if($this->view->erro){ ?>
+                <div>
+                    <small class="form-text text-danger">Erro ao cadastrar</small>
+                </div>
+            <?php }?>
+        </form>
+    </div>
+</section>    

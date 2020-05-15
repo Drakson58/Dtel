@@ -1,0 +1,227 @@
+<?php
+
+    if(isset($_SESSION['id_usuario'])){
+        $logado = true;
+    }else {
+        $logado = false;
+    }
+?>
+
+
+<section class="margin_20px">
+        <nav id="Turnos" class="container text-center">
+            <a href="#" id="Manha" class="btn manha text-center">Manhã</a>
+            <a href="#" id="Tarde" class="btn tarde text-center">Tarde</a>
+            <a href="#" id="Noite" class="btn noite text-center">Noite</a>
+        </nav>
+        <div class="">
+            <h3 class="text-center">Bolsistas</h3>
+        </div>
+        <div id="TabelaHorarios" class="">
+            <!--Tabela da Manhã-->
+            <div class="" id="Manha">
+                <!--Primeiro tempo manhã-->
+                <div class="TempoManha">
+                    <div class="table-responsive">
+                        <table class="table table-striped ">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th class="text-center">Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($this->view->bolsistas as $key => $value) { 
+                                    if($value['turno'] == 'manha') {?>
+                                        <tr>
+                                            <th><?=$value['nome_bolsista']?></th>
+                                            <td class="d-flex justify-content-center">
+                                            <?php if($logado) {?>                                               
+                                                <form  action="/situacao_presenca?id=<?= $value['id_bolsista']?>" method="post">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <select name="situacao_bolsista">
+                                                                <option>Não chegou</option>
+                                                                <option>Presente</option>
+                                                                <option>Faltou</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="submit" class="btn btn-success">Atualizar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            <?php } else {?>
+
+                                                <?php if($value['situação_presenca'] == 'Presente'){ ?>
+                                                    <div class="bg-success text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Faltou') {?>
+                                                    <div class="bg-danger text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
+                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php }?>
+                                                
+                                            <?php }?>
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tabela da Manhã-->
+            <div class="" id="Tarde">
+                <!--Primeiro tempo manhã-->
+                <div class="TempoManha">
+                    <div class="table-responsive">
+                        <table class="table table-striped ">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th class="text-center">Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($this->view->bolsistas as $key => $value) { 
+                                    if($value['turno'] == 'tarde') {?>
+                                        <tr>
+                                            <th><?=$value['nome_bolsista']?></th>
+                                            <td class="d-flex justify-content-center">
+                                            <?php if($logado) {?>                                               
+                                                <form  action="/situacao_presenca?id=<?= $value['id_bolsista']?>" method="post">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <select name="situacao_bolsista">
+                                                                <option>Não chegou</option>
+                                                                <option>Presente</option>
+                                                                <option>Faltou</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="submit" class="btn btn-success">Atualizar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            <?php } else {?>
+
+                                                <?php if($value['situação_presenca'] == 'Presente'){ ?>
+                                                    <div class="bg-success text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Faltou') {?>
+                                                    <div class="bg-danger text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
+                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php }?>
+                                                
+                                            <?php }?>
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!--Tabela da Manhã-->
+            <div class="" id="Noite">
+                <!--Primeiro tempo manhã-->
+                <div class="TempoManha">
+                    <div class="table-responsive">
+                        <table class="table table-striped ">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nome</th>
+                                    <th class="text-center">Situação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($this->view->bolsistas as $key => $value) { 
+                                    if($value['turno'] == 'noite') {?>
+                                        <tr>
+                                            <th><?=$value['nome_bolsista']?></th>
+                                            <td class="d-flex justify-content-center">
+                                            <?php if($logado) {?>                                               
+                                                <form  action="/situacao_presenca?id=<?= $value['id_bolsista']?>" method="post">
+                                                    <div class="row">
+                                                        <div class="col-8">
+                                                            <select name="situacao_bolsista">
+                                                                <option>Não chegou</option>
+                                                                <option>Presente</option>
+                                                                <option>Faltou</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="submit" class="btn btn-success">Atualizar</button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            <?php } else {?>
+
+                                                <?php if($value['situação_presenca'] == 'Presente'){ ?>
+                                                    <div class="bg-success text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Faltou') {?>
+                                                    <div class="bg-danger text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
+                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
+                                                        <?= $value['situação_presenca']?>
+                                                    </div>
+                                                <?php }?>
+                                                
+                                            <?php }?>
+                                            </td>
+                                        </tr>
+                                    <?php }?>
+                            <?php }?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <!--Codigos em javaScript-->
+    <script>
+        function tableshowhide(a, b, c) {
+            len = Turnos.childElementCount;
+            closeTabelaHorarios();
+            for (i = 0; i < len; i++) {
+                Turnos.children[i].onclick = function() {
+                    closeTabelaHorarios();
+                    TabelaHorarios.children[this.id].style.display = "block";
+                }
+            }
+
+            function closeTabelaHorarios() {
+                for (i = 0; i < TabelaHorarios.childElementCount; i++) {
+                    TabelaHorarios.children[i].style.display = "none";
+                }
+            }
+
+            Turnos.children[c].click();
+        }
+
+        tableshowhide("menu", "TabelaHorarios", "Manha");
+    </script>

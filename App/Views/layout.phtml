@@ -1,0 +1,144 @@
+<?php 
+    session_start();
+    if(@$_SESSION['id_usuario'] != ''){
+        $usarioLogado = true;
+    }else{
+        $usarioLogado = false;
+    }
+?>
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"  crossorigin="anonymous">
+
+    <!-- estilo CSS -->
+    <link rel="stylesheet" href="CSS/estilo.css">
+
+    <!--JavaScript-->
+    <script src="js/javascript.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+
+    <!--Link do google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+
+    <!--Tags novas do html5-->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+
+    <title>Dtel - Sistema</title>
+</head>
+
+<body>
+
+	<header>
+        <!-- inicio Cabecalho -->
+        <nav id="Topo" class="navbar navbar-expand-sm navbar-light fundo_nav">
+            <div class="container">
+
+                <a href="/" class="navbar-brand">
+                    <img id="ImgLogo" src="img/logo3.png" width="400px" height="50px">
+                </a>
+
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-header-topo">
+              <span><i class="fas fa-door-open"></i></span>
+            </button>
+            
+            <?php if($usarioLogado == false) {?>
+                <div class="collapse navbar-collapse" id="nav-header-topo">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <form  method="post" action="/autenticar" id="Login" class="form-inline my-2 my-lg-0">
+
+                                <label for="" class="texto_da_caixa_de_entrada" style="margin-right: 10px;">Login:</label>
+                                <input name="email" class="form-control caixa_de_entrada1 " type="text" placeholder="Digite seu email">
+                                <label for="" class="texto_da_caixa_de_entrada" style="margin-right: 10px;">Senha:</label>
+                                <input name="senha" class="form-control caixa_de_entrada2" type="password" placeholder="Digite sua senha">
+                                <li class="nav-item">
+                                    <button type="submit" class="btn btn-outline-light botao1">Entrar</button>
+                                </li>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            <?php } else if($usarioLogado == true) {?>
+                <div>
+                    <?php if($_SESSION['nome_usuario'] == 'Silvana' || $_SESSION['nome_usuario'] == 'David') {?>
+                        <a href="/Cadastrar_bolsista" class="btn btn-outline-light botao1">Cadastrar Bolsista</a>
+                    <?php } ?>
+                    <a href="/Cadastrar_professor" class="btn btn-outline-light botao1">Cadastrar Professor</a>
+                    <a href="/sair" class="btn btn-outline-light botao1">Sair</a>
+                </div>
+            <?php }?>
+            </div>
+        </nav>
+
+
+        <img src="img/principal.jpg" width="100%" >
+
+        <!-- Nav para menu da parte de baixo -->
+        <nav class="navbar navbar-expand-lg navbar-light fundo_nav">
+            <div class="container">
+
+                <div></div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link opcoes_menu" href="/">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link opcoes_menu" href="/tela_de_bolsistas">Tela de bolsistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link opcoes_menu" href="/pag_cursos">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+							<a class="nav-link opcoes_menu" href="/laboratorios">Laboratórios</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar um coodernador" aria-label="Search">
+                        <button id="BtnPesquisar" class="btn btn-outline-light" type="submit">Pesquisar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--/fim Cabecalho -->
+
+	<?= $this->content() ?>
+
+
+    <!--Inicio do footer-->
+    <!-- Footer -->
+    <footer class="page-footer font-small blue" style="background: #598979; color: white; clear:both;">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="width: 90%; margin-left: 19px;">© 2020 Developed by: Alyne Alves, Drakson Bezerra and Moisés Duarte
+            <a href="https://mdbootstrap.com/"> </a>
+        </div>
+
+    </footer>
+    <!-- Footer -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

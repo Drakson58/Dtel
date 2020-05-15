@@ -1,0 +1,97 @@
+<div class="container" style="margin-bottom: 20px;">
+        <form action="/realizar_cadastro_professor" method="post">
+            <div class="">
+                <h3 class="text-center" style="margin-top: 15px">Cadastro de Professor</h3>
+            </div>
+            <div class="form-row">
+                <div class="col-25">
+                    <label for="nome">Nome do professor:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="nome" name="nome_professor">
+                </div>
+            </div>
+
+
+
+            <div class="form-row">
+                <div class="col-25">
+                    <label for="materia5">Nome da matéria:</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="materia" name="nome_materia" placeholder="Ex: POO">
+                </div>
+                <div class="col">
+                    <label for="laboratorio">Laboratório:</label>
+                </div>
+                <div class="col">
+                    <select id="laboratorio" name="laboratorio">
+                        <option value="lmc1">LMC1</option>
+                        <option value="lmc2">LMC2</option>
+                        <option value="lmc3">LMC3</option>
+                        <option value="lmc4">LMC4</option>
+                        <option value="redes1">Redes 1</option>
+                        <option value="redes2">Redes 2</option>
+                        <option value="semb">SEMB</option>
+                        <option value="elet">Elet</option>
+                        <option value="comut">Comut</option>
+                        <option value="radio">Rádio</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="turma" style="margin-left: 20px">Turma: </label>
+                </div>
+                <div class="col">
+                    <select id="turma" name="turma">
+                        <option value="eng_comp">Eng. da Computação</option>
+                        <option value="eng_tele">Eng. de Telecomunicações</option>
+                        <option value="tec_info">Tec. int. em Informática</option>
+                        <option value="tec_tele">Tec. int. em Telecomunicações</option>
+                        <option value="telemat">Telemática</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="dia" style="margin-left: 20px">Dia: </label>
+                </div>
+                <div class="col">
+                    <select id="dia" name="dia">
+                        <option value="segunda">Segunda</option>
+                        <option value="terca">Terça</option>
+                        <option value="quarta">Quarta</option>
+                        <option value="quinta">Quinta</option>
+                        <option value="sexta">Sexta</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="turno" style="margin-left: 20px">Turno: </label>
+                </div>
+                <div class="col">
+                    <select id="turno" name="turno">
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="horario" style="margin-left: 20px">Horário: </label>
+                </div>
+                <div class="col">
+                    <select id="horario" name="horario">
+                        <option value="7:30">7:30 as 9:30</option>
+                        <option value="10:00">10:00 as 12:00</option>
+                        <option value="13:30">13:30 as 15:30</option>
+                        <option value="16:00">16:00 as 18:00</option>
+                        <option value="18:30 ">18:30 as 20:00</option>
+                        <option value="20:15">20:15 as 22:00</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="linha row"></div>
+    
+            <div class="row">
+                <input type="submit" value="Cadastrar">
+            </div>
+        </form>
+    </div>
+</div>
