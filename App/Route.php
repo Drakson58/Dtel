@@ -26,10 +26,10 @@ class Route extends Bootstrap {
 			'action' => 'pag_cursos'
 		);
 
-		$routes['laboratorios_segunda'] = array(
-			'route' => '/laboratorios_segunda',
+		$routes['laboratorios'] = array(
+			'route' => '/laboratorios',
 			'controller' => 'indexController',
-			'action' => 'laboratorios_segunda'
+			'action' => 'laboratorios'
 		);
 
 		$routes['autenticar'] = array(
@@ -50,6 +50,17 @@ class Route extends Bootstrap {
 			'action' => 'Cadastrar_bolsista'
 		);
 
+		$routes['Configuracao_bolsista'] = array(
+			'route' => '/Configuracao_bolsista',
+			'controller' => 'AppController',
+			'action' => 'Configuracao_bolsista'
+		);
+		
+		$routes['apagar_bolsista'] = array(
+			'route' => '/apagar_bolsista',
+			'controller' => 'AppController',
+			'action' => 'apagar_bolsista'
+		);
 
 		$routes['realizar_cadastro'] = array(
 			'route' => '/realizar_cadastro',
@@ -75,38 +86,7 @@ class Route extends Bootstrap {
 			'action' => 'realizar_cadastro_professor'
 		);
 
-		# Páginas de horarios
-		$routes['laboratorios_terca'] = array(
-			'route' => '/laboratorios_terca',
-			'controller' => 'IndexController',
-			'action' => 'laboratorios_terca'
-		);
 
-		$routes['laboratorios_quarta'] = array(
-			'route' => '/laboratorios_quarta',
-			'controller' => 'IndexController',
-			'action' => 'laboratorios_quarta'
-		);
-
-		$routes['laboratorios_quinta'] = array(
-			'route' => '/laboratorios_quinta',
-			'controller' => 'IndexController',
-			'action' => 'laboratorios_quinta'
-		);
-
-		$routes['laboratorios_sexta'] = array(
-			'route' => '/laboratorios_sexta',
-			'controller' => 'IndexController',
-			'action' => 'laboratorios_sexta'
-		);
-
-		$routes['situacao_laboratorio'] = array(
-			'route' => '/situacao_laboratorio',
-			'controller' => 'AppController',
-			'action' => 'situacao_laboratorio'
-		);
-
-		
 		$this->setRoutes($routes);
 	}
 

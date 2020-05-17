@@ -83,6 +83,16 @@ class Bolsista extends Model{
         return  $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
+    public function apagar_bolsista(){
+
+        $query = "delete from bolsistas where bolsistas.id_bolsista = :id_bolsista";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':id_bolsista', $_GET['id']);
+        $stmt->execute();
+
+        return $this;
+    }
+
 
     public function altera_presenca(){
 

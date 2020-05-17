@@ -41,11 +41,27 @@ class AppController extends Action {
         } 
     }
 
+    public function Configuracao_bolsista(){
 
-    public function situacao_presenca(){
+        $bolsista = Container::getModel('Bolsista');
+        $this->view->bolsistas = $bolsista->mostrar_bolsista();
+        $this->render('Configuracao_bolsista');
+    }
+
+    public function apagar_bolsista(){
+
         
+        $bolsista = Container::getModel('Bolsista');
+        $bolsista->apagar_bolsista();
+        $this->render('Configuracao_bolsista');
+    }
+
+
+    public function situacao_presenca(){     
+        /*
         echo $_POST['situacao_bolsista'];
         echo $_GET['id'];
+        */
 
         $bolsista = Container::getModel('Bolsista');
         $bolsista->__set('id_bolsista', $_GET['id']);
@@ -62,48 +78,6 @@ class AppController extends Action {
     }
 
 
-    public function realizar_cadastro_professor(){ //dia
-
-        $professor = Container::getModel('Professor');
-        $professor->__set('dia_aula', $_POST['dia']);
-        $professor->__set('turno', $_POST['turno']);
-        $professor->__set('laboratorio', $_POST['laboratorio']);
-        $professor->__set('horario', $_POST['horario']);
-        $professor->__set('nome_professor', $_POST['nome_professor']);
-        $professor->__set('turma', $_POST['turma']);
-        $professor->__set('disciplina', $_POST['nome_materia']);
-        
-        if($_POST['dia'] == 'segunda'){
-
-            $professor->cadastrar_em_segunda();
-        }else if($_POST['dia'] == 'terca'){
-
-            $professor->cadastrar_em_terca();
-        }else if($_POST['dia'] == 'quarta'){
-
-            $professor->cadastrar_em_quarta();
-        }else if($_POST['dia'] == 'quinta'){
-
-            $professor->cadastrar_em_quinta();
-        }else if($_POST['dia'] == 'sexta'){
-
-            $professor->cadastrar_em_sexta();
-        }
-
-        $this->render('Cadastro_professor');
-    }
-
-
-    public function situacao_laboratorio(){
-
-        echo '<pre>';
-        print_r($_POST);
-        echo '</pre>';
-
-        if($_POST['situacao_lmc1'] == 'Livre'){
-            
-        }
-    }
 }
 
 
