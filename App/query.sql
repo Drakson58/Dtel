@@ -18,3 +18,90 @@ CREATE TABLE bolsistas(
     senha_bolsista varchar(32) not null,
     situação_presenca varchar(32)
 )
+
+
+
+-- Create table cadastro de professores
+CREATE TABLE tabela_de_aulas(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null
+)
+
+-- Segunda
+CREATE TABLE tabela_de_aulas_segunda(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null,
+    bolsista varchar(100),
+    situacao varchar(100)
+)
+
+-- Terça
+CREATE TABLE tabela_de_aulas_terca(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null,
+    bolsista varchar(100),
+    situacao varchar(100)
+)
+
+
+-- Quarta
+CREATE TABLE tabela_de_aulas_quarta(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null,
+    bolsista varchar(100),
+    situacao varchar(100)
+)
+
+
+-- Quinta
+CREATE TABLE tabela_de_aulas_quinta(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null,
+    bolsista varchar(100),
+    situacao varchar(100)
+)
+
+
+-- Sexta
+CREATE TABLE tabela_de_aulas_sexta(
+	id_aula int not null PRIMARY KEY AUTO_INCREMENT,
+    dia_aula varchar(100) not null,
+    laboratorio varchar(32),
+    turno varchar(100) not null,
+    horario varchar(32) not null,
+    nome_professor varchar(150) not null,
+    turma varchar(100) not null,
+    disciplina varchar(150) not null,
+    bolsista varchar(100),
+    situacao varchar(100)
+)

@@ -62,7 +62,7 @@
                                                         <?= $value['situação_presenca']?>
                                                     </div>
                                                 <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
-                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
+                                                    <div class="bg-warining text-white text-center" style="width: 100%;">
                                                         <?= $value['situação_presenca']?>
                                                     </div>
                                                 <?php }?>
@@ -92,7 +92,7 @@
                             </thead>
                             <tbody>
                             <?php foreach ($this->view->bolsistas as $key => $value) { 
-                                    if($value['turno'] == 'tarde') {?>
+                                    if($value['turno'] == 'manha') {?>
                                         <tr>
                                             <th><?=$value['nome_bolsista']?></th>
                                             <td class="d-flex justify-content-center">
@@ -112,21 +112,9 @@
                                                     </div>
                                                 </form>
                                             <?php } else {?>
-
-                                                <?php if($value['situação_presenca'] == 'Presente'){ ?>
-                                                    <div class="bg-success text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php } else if($value['situação_presenca'] == 'Faltou') {?>
-                                                    <div class="bg-danger text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
-                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php }?>
-                                                
+                                                <div class="bg-success text-white text-center" style="width: 100%;">
+                                                    <?= $value['situação_presenca']?>
+                                                </div>
                                             <?php }?>
                                             </td>
                                         </tr>
@@ -152,7 +140,7 @@
                             </thead>
                             <tbody>
                             <?php foreach ($this->view->bolsistas as $key => $value) { 
-                                    if($value['turno'] == 'noite') {?>
+                                    if($value['turno'] == 'manha') {?>
                                         <tr>
                                             <th><?=$value['nome_bolsista']?></th>
                                             <td class="d-flex justify-content-center">
@@ -172,21 +160,9 @@
                                                     </div>
                                                 </form>
                                             <?php } else {?>
-
-                                                <?php if($value['situação_presenca'] == 'Presente'){ ?>
-                                                    <div class="bg-success text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php } else if($value['situação_presenca'] == 'Faltou') {?>
-                                                    <div class="bg-danger text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php } else if($value['situação_presenca'] == 'Não chegou'){?>
-                                                    <div class="bg-warning text-white text-center" style="width: 100%;">
-                                                        <?= $value['situação_presenca']?>
-                                                    </div>
-                                                <?php }?>
-                                                
+                                                <div class="bg-success text-white text-center" style="width: 100%;">
+                                                    <?= $value['situação_presenca']?>
+                                                </div>
                                             <?php }?>
                                             </td>
                                         </tr>

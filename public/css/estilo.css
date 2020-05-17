@@ -145,17 +145,8 @@ h6 {
     margin-top: 20px;
 }
 
-
-/* Pág pesquisa por um lab */
-
-#NavLab {
-    width: 100%;
-    background: #4ECCA3;
-    text-transform: uppercase;
-}
-
-#OpcoesLabs {
-    background: #4ECCA3;
+#Dropdown_para_opcoes {
+    width: 105px;
 }
 
 
