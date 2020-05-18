@@ -6,8 +6,8 @@ CREATE TABLE usuario(
     senha_usuario varchar(32) not null
 )
 
-INSERT INTO `usuario`( `nome_usuario`, `email_usuario`, `senha_usuario`) VALUES ('Silvana', 'silvana@gmail.com', 1234);
-INSERT INTO `usuario`( `nome_usuario`, `email_usuario`, `senha_usuario`) VALUES ('David', 'david@gmail.com', 1234);
+INSERT INTO `usuario`( `nome_usuario`, `email_usuario`, `senha_usuario`) VALUES ('Silvana', 'silvana@gmail.com', @dtel1234);
+INSERT INTO `usuario`( `nome_usuario`, `email_usuario`, `senha_usuario`) VALUES ('David', 'david@gmail.com', @dtel1234);
 
 -- Create table bolsista
 CREATE TABLE bolsistas(
